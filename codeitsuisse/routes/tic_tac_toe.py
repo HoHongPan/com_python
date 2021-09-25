@@ -1,7 +1,7 @@
 import logging
 import json
-import request
-import sseclient
+import requests
+from sseclient import SSEClient
 
 from flask import request, jsonify
 
