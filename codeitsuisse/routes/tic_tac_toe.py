@@ -17,4 +17,5 @@ def tic_tac_toe():
     URL = "https://cis2021-arena.herokuapp.com/tic-tac-toe/start/" + id
     table = [[0,0,0],[0,0,0],[0,0,0]]
     r = requests.get(URL)
+    print(r)
     return json.dumps(URL)
