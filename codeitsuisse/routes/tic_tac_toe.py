@@ -18,7 +18,7 @@ def tic_tac_toe():
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     print(url)
     my_data = { "action": "putSymbol", "position": "SE"}
-    s = requests.post(url, my_data)
+    s = requests.post(url, data = my_data)
     r = requests.get(url)
     print(r.read())
     return json.dumps(url)
