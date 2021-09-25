@@ -26,7 +26,7 @@ def tic_tac_toe():
     logging.info("data sent for evaluation {}".format(data))
     id = data.get("battleId")
     url = 'https://cis2021-arena.herokuapp.com/tic-tac-toe/start/' + id
-    table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    print(url)
     response = with_urllib3(url)
     client = sseclint.SSEClient(respone)
     for event in client.event():
