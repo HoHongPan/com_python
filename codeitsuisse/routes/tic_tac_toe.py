@@ -1,7 +1,6 @@
 import logging
 import json
-import urllib.request
-import urllib.parse
+import requests
 
 from flask import request, jsonify
 
@@ -18,6 +17,8 @@ def tic_tac_toe():
     url = 'https://cis2021-arena.herokuapp.com/tic-tac-toe/start/' + id
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     print(url)
-    r = urllib.request.urlopen(url)
-    print(r.read().decode('utf-8'))
+    my_data = { "action": "putSymbol", "position": "SE"}
+    s = requests.post(url, my_data)
+    r = requests.get(url)
+    print(r.read())
     return json.dumps(url)
