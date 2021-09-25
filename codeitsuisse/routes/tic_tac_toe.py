@@ -18,6 +18,12 @@ def tic_tac_toe():
     url = 'https://cis2021-arena.herokuapp.com/tic-tac-toe/start/' + id
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     print(url)
-    #r = requests.get(url, stream=True, headers=headers)
-    #print(r.txt)
+    messages = SSEClient(url)
+
+    for msg in messages:
+        outputMsg = msg.data
+        if type(outputMsg) is not str:
+            outputJS = json.loads(outputMsg)
+            FilterName = "data"
+            print(outputJS[FilterName])
     return json.dumps(url)
