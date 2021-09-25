@@ -19,5 +19,6 @@ def tic_tac_toe():
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     print(url)
     messages = SSEClient(url)
-    print(messages)
+    for msg in messages:
+        print(msg)
     return 0
