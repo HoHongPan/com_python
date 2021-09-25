@@ -1,6 +1,7 @@
 import logging
 import json
-import requests
+import request
+import sseclient
 
 from flask import request, jsonify
 
@@ -17,8 +18,6 @@ def tic_tac_toe():
     url = 'https://cis2021-arena.herokuapp.com/tic-tac-toe/start/' + id
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     print(url)
-    my_data = { "action": "putSymbol", "position": "SE"}
-    s = requests.post(url, data = my_data)
-    r = requests.get(url)
-    print(r.read())
+    r = requests.get(url, stream=True, headers=headers)
+    print(r.txt)
     return json.dumps(url)
