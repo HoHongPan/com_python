@@ -14,8 +14,8 @@ def tic_tac_toe():
     data = request.get_json()
     logging.info("data sent for evaluation {}".format(data))
     id = data.get("battleId")
-    url = "https://cis2021-arena.herokuapp.com/tic-tac-toe/start/" + id
+    url = 'https://cis2021-arena.herokuapp.com/tic-tac-toe/start/' + id
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     r = requests.get(url)
-    print(r)
+    print(r.status_code)
     return json.dumps(url)
