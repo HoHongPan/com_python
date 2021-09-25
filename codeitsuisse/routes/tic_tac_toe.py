@@ -16,6 +16,7 @@ def tic_tac_toe():
     id = data.get("battleId")
     url = 'https://cis2021-arena.herokuapp.com/tic-tac-toe/start/' + id
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    printf(url)
     r = requests.get(url)
     print(r.status_code)
     return json.dumps(url)
