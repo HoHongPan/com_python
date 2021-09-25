@@ -18,5 +18,5 @@ def tic_tac_toe():
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     print(url)
     r = requests.get(url)
-    print(r.text)
-    return 0
+    pprint(r.json())
+    return json.dumps(url)
