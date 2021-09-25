@@ -19,11 +19,5 @@ def tic_tac_toe():
     table = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     print(url)
     messages = SSEClient(url)
-
-    for msg in messages:
-        outputMsg = msg.data
-        if type(outputMsg) is not str:
-            outputJS = json.loads(outputMsg)
-            FilterName = "data"
-            print(outputJS[FilterName])
-    return json.dumps(url)
+    print(messages)
+    return 0
